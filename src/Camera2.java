@@ -41,7 +41,7 @@ public class Camera2 {
 
             ArrayList<Camera2> CamList = new ArrayList();
                
-            for (int i = 0; i < (args.length / 3); i++) {
+            for (int i = 0; i < (args.length / 3 - 1); i++) {
             int j = 3*i;
                 Camera2 C = new Camera2();
                 C.setBrand(args[j]);
