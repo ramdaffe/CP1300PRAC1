@@ -41,7 +41,7 @@ public class Camera2 {
 
             ArrayList<Camera2> CamList = new ArrayList();
                
-            for (int i = 0; i < (args.length / 3 - 1); i++) {
+            for (int i = 0; i < (args.length / 3); i++) {
             int j = 3*i;
                 Camera2 C = new Camera2();
                 C.setBrand(args[j]);
@@ -49,28 +49,25 @@ public class Camera2 {
                 C.setshutterPressed(Boolean.valueOf(args[j+2]).booleanValue());
                 CamList.add(i,C);
             }
-        
+
             for (int i = 0; i < CamList.size(); ++i) {
                 System.out.println(" Camera" + i + " Brand is: " + CamList.get(i).getBrand() + " Focal Length is: " + CamList.get(i).getfLength() + " Shutter pressed is: " + CamList.get(i).getshutterPressed());
             }
 
-            if (CamList.get(0).getBrand().equals(CamList.get(1).getBrand())) {
-                System.out.println("Camera " + 0 + " and Camera " + (1) + " have the same brand!");
-            } else {
-                System.out.println("Camera " + 0 + " and Camera " + (1) + " have different brand!");
+            //int currcam = 0;
+            //int nextcam = currcam + 1;
+            for (int i = 0; i < CamList.size(); i ++){
+                int TEMP = CamList.size() - i;
+                for (int j = 0; j < TEMP; j++){
+                    if (CamList.get(i).getBrand().equals(CamList.get(j).getBrand())) {
+                        System.out.println("Camera " + i + " and Camera " + j + " have the same brand!");
+                    } else {
+                        System.out.println("Camera " + i + " and Camera " + j + " have different brand!");
+                    }
+                }
+                
+                //currcam = nextcam;
+                //nextcam = currcam + 1;
             }
-           
-            if (CamList.get(1).getBrand().equals(CamList.get(2).getBrand())) {
-                System.out.println("Camera " + 1 + " and Camera " + (2) + " have the same brand!");
-            } else {
-                System.out.println("Camera " + 1 + " and Camera " + (2) + " have different brand!");
-            }
-            
-            if (CamList.get(0).getBrand().equals(CamList.get(2).getBrand())) {
-                System.out.println("Camera " + 0 + " and Camera " + (2) + " have the same brand!");
-            } else {
-                System.out.println("Camera " + 0 + " and Camera " + (2) + " have different brand!");
-            }
-        
     }        
 }

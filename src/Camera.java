@@ -39,7 +39,7 @@ public class Camera {
                 new Camera(),new Camera(),new Camera()
             };
                
-            for (int i = 0; i < cameraArray.length; i++) {
+            for (int i = 0; i < (cameraArray.length -1); i++) {
             int j = 3*i;
             cameraArray[i].setBrand(args[j]);
             cameraArray[i].setfLength(Integer.parseInt(args[j+1]));
